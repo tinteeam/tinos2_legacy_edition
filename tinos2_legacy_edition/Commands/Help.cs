@@ -15,6 +15,9 @@ namespace tinos2_legacy_edition.Commands
             Console.WriteLine("- help: Displays this help message.");
             Console.WriteLine("- info: Provides information about TINOS 2 Legacy edition.");
             Console.WriteLine("- ver: Displays the version of TINOS 2 Legacy edition.");
+            Console.WriteLine("- clear: Clears the screen");
+            Console.WriteLine("- shutdown: shutdown the system");
+            Console.WriteLine("- restart: restarts the system");
             return "";
         }
     
