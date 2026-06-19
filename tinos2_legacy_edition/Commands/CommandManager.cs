@@ -15,6 +15,12 @@ namespace tinos2_legacy_edition.Commands
         {
             this.commands = new List<Command>(15);
             this.commands.Add(new InfoCmd("info"));
+            this.commands.Add(new Ver("ver"));
+            this.commands.Add(new Help("help"));
+            this.commands.Add(new Clear("clear"));
+            this.commands.Add(new Shutdown("shutdown"));
+            this.commands.Add(new Restart("restart"));
+
         }
 
         public string ProcessInput(string input)
