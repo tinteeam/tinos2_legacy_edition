@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using tinos2_legacy_edition.Fs.Commands;
+
 namespace tinos2_legacy_edition.Commands
 {
     public class CommandManager
@@ -20,6 +22,8 @@ namespace tinos2_legacy_edition.Commands
             this.commands.Add(new Clear("clear"));
             this.commands.Add(new Shutdown("shutdown"));
             this.commands.Add(new Restart("restart"));
+            this.commands.Add(new Nano("nano"));
+            this.commands.Add(new Touch("touch"));
 
         }
 
