@@ -11,15 +11,35 @@ namespace tinos2_legacy_edition
     {
 
         private CommandManager commandManger;
+        private Fs.FSInit fsInit;
 
         protected override void BeforeRun()
         {
+            // Clear screen and wait for 1 second
             Console.Clear();
             Thread.Sleep(1000);
-            Console.WriteLine("loading Command Manager, Please wait...");
+
+            //Start loading modules
+            Console.WriteLine("loading System Modules, Please wait...");
             Thread.Sleep(1000);
+
+            String isFsLoaded = "false";
+            this.fsInit = new Fs.FSInit();
+            isFsLoaded = "true";
+
             this.commandManger = new CommandManager();
             Thread.Sleep(1000);
+
+           if(isFsLoaded == "true")
+            {
+                Console.WriteLine("FS Module loaded successfully");
+            } else
+            {
+                Console.WriteLine("WARNING!");
+                Console.WriteLine("FS module failed to load, Filesystem commands will not work");
+            }
+
+            // Load the system to be ready for use
             Console.WriteLine("Welcome to TINOS 2 Legacy edition");
             Console.WriteLine("Loaded successfully, type 'help' for a list of commands");
         }
