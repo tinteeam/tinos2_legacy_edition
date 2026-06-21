@@ -11,7 +11,7 @@ namespace tinos2_legacy_edition.Commands
         public Ver(string name) : base(name) { }
         public override string Execute(string[] args)
         {
-            Console.WriteLine("TINOS 2 Legacy edition version 0.1 Alpha");
+            Console.WriteLine("TINOS 2 Legacy edition version 0.1 Beta");
             return "";
         }
     }
