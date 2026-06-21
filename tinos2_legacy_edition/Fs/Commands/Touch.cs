@@ -22,8 +22,15 @@ namespace tinos2_legacy_edition.Fs.Commands
                 Console.WriteLine("Type 'touch help' for more information.");
             }
 
-            VFSManager.CreateFile(args[0]);
-            
+            try
+            {
+                VFSManager.CreateFile(args[0]);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error creating file: " + ex.Message);
+            }
+
             return "";
         }
     }

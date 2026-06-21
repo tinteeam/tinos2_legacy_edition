@@ -16,7 +16,7 @@ namespace tinos2_legacy_edition.Fs
         static CosmosVFS vfs = new CosmosVFS();
          
 
-        public static void Init()
+        public void Init()
         {
             
             Console.WriteLine("Initializing File System Module, Please Wait...");

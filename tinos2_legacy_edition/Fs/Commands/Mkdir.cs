@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace tinos2_legacy_edition.Fs.Commands
 {
-    internal class Mkdir
+    public class Mkdir
     {
     }
 }

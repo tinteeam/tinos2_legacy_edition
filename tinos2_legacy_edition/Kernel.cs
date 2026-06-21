@@ -4,6 +4,7 @@ using System.Text;
 using tinos2_legacy_edition.Commands;
 using Sys = Cosmos.System;
 using System.Threading;
+using Cosmos.System.FileSystem.VFS;
 
 namespace tinos2_legacy_edition
 {
@@ -23,21 +24,33 @@ namespace tinos2_legacy_edition
             Console.WriteLine("loading System Modules, Please wait...");
             Thread.Sleep(1000);
 
-            String isFsLoaded = "false";
+           
             this.fsInit = new Fs.FSInit();
-            isFsLoaded = "true";
+            this.fsInit.Init();
+            
 
             this.commandManger = new CommandManager();
             Thread.Sleep(1000);
 
-           if(isFsLoaded == "true")
+
+            Console.WriteLine("Running vfs tests");
+
+            Console.WriteLine("Testing VFS...");
+
+            try
             {
-                Console.WriteLine("FS Module loaded successfully");
-            } else
-            {
-                Console.WriteLine("WARNING!");
-                Console.WriteLine("FS module failed to load, Filesystem commands will not work");
+                var disks = VFSManager.GetDisks();
+                Console.WriteLine("Disk count: " + disks.Count);
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine("VFS test failed!");
+                Console.WriteLine(ex.Message);
+            }
+
+            Thread.Sleep(1000);
+            Console.Clear();
+            Thread.Sleep(1000);
 
             // Load the system to be ready for use
             Console.WriteLine("Welcome to TINOS 2 Legacy edition");

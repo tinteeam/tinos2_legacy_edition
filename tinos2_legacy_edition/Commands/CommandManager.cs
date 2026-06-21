@@ -24,6 +24,7 @@ namespace tinos2_legacy_edition.Commands
             this.commands.Add(new Restart("restart"));
             this.commands.Add(new Nano("nano"));
             this.commands.Add(new Touch("touch"));
+            this.commands.Add(new Format("format"));
 
         }
 
